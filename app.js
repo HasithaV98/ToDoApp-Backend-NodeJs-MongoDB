@@ -1,0 +1,11 @@
+//const { required } = require("nodemon/lib/config");
+const body_parser=require('body-parser');
+const userRoutes=require('./routes/userRoutes');
+const todoRouter=require("./routes/todoRoute");
+const express=require('express');
+const todoModel=require("./model/todoModel");
+const app=express();
+app.use(body_parser.json());
+app.use('/',userRoutes);
+app.use('/',todoRouter);
+module.exports=app;
